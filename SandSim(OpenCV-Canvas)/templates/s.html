@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+                }
+        #main{
+            position: relative
+
+            max-width: 100%;
+            height: 100%;
+
+            margin: 0 auto;
+        
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 5%;
+
+        }
+            
+
+            
+        #canvas{
+
+            background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+            border: 3px solid black ;
+            box-shadow: 0 0 4px 10px white;
+
+
+        }
+
+        #webcam{
+            border: 3px solid black ;
+            box-shadow: 0 0 4px 10px white;
+        }
+
+        @media (max-width:550px){
+
+
+            #webcam{
+                width: 300px;
+                height: 300px;
+       
+            }
+            #canvas{
+
+                
+                width: 300px;
+                height: 300px;
+    
+            }
+
+        }
+
+    </style>
+    <title>Sand Simulation</title>
+</head> 
+<body>
+    <div id= "main">
+     
+        <img id="webcam" src="{{ url_for('video') }}" width="600px" height="600px" />   
+    
+            <canvas id = "canvas" width="600px" height="600px" ></canvas>
+  
+    </div>
+
+
+
+    <script src = "{{ url_for('static', filename='canvas.js') }}"></script>
+
+    
+</body>
+</html>
